@@ -33,15 +33,15 @@
         </div>
 
         <div class="space-x-4">
-            <input type="text" placeholder="Search issues..." class=" input input-bordered w-24 md:w-auto" />
-            <button class="btn btn-primary"><i class="fa-solid fa-plus"></i> New issue</button>
+            <input id="search-input" type="text" placeholder="Search issues..." class=" input input-bordered w-24 md:w-auto" />
+            <button onclick="searchInfo()" id="search-filter-btn" class="btn btn-primary"><i class="fa-solid fa-plus"></i> New issue</button>
         </div>
     </div>
     </header>
 
     <section class="w-11/12 mx-auto mt-15">
         <div class="space-x-2">
-            <button onclick="toggleStyle('all-filter-btn')" id="all-filter-btn" class="btn">All</button>
+            <button onclick="toggleStyle('all-filter-btn')" id="all-filter-btn" class="btn btn-primary">All</button>
             <button onclick="toggleStyle('open-filter-btn')" id="open-filter-btn" class="btn">Open</button>
             <button onclick="toggleStyle('closed-filter-btn')" id="closed-filter-btn" class="btn">Closed</button>
         </div>
@@ -49,7 +49,7 @@
             <div class="flex gap-2">
                 <div class="content-center "><img src="./assets/Aperture.png" alt=""></div>
                 <div>
-                    <h3 class="font-semibold"> <span>50</span> Issues</h3>
+                    <h3 class="font-semibold"> <span id="issue-Count">50</span> Issues</h3>
                     <p class="text-[#64748B]">Track and manage your project issues</p>
                 </div>
             </div>
@@ -62,9 +62,86 @@
     </section>
 
 
-    <section>
+    <section class="container mx-auto p-5 bg-white shadow-md">
+      <!-- card section  -->
+      <div id="card-container" class="grid-cols-4 gap-5">
 
+      </div>
+
+      <!-- open card section  -->
+      <div id="open-container">
+
+      </div>
+
+      <!-- closed card section  -->
+      <div> </div>
     </section>
+
+     <!-- loading spinner  -->
+    <div id="loadingSpinner" class="h-[60vh] hidden flex justify-center items-center"><span class="loading loading-spinner loading-xl"></span></div>
+
+    
+
+    <dialog id="issue_details_modal" class="modal">
+      <div class="modal-box">
+        <!-- Modal Header with Close Button -->
+        <div class="flex justify-between items-start mb-4">
+          <h3 class="font-bold text-2xl text-green-700" id="modalTitle">
+            Issue Details
+          </h3>
+          <button
+            class="btn btn-sm btn-circle btn-ghost"
+            onclick="document.getElementById('issue_details_modal').close()"
+          >
+            ✕
+          </button>
+        </div>
+
+        <!-- Modal Content -->
+
+        <!-- Plant Details -->
+        <div class="space-y-3">
+          <!-- <p class="text-sm text-gray-500 mb-2">
+              <span class="font-bold">Category:</span>
+              <span id="modalCategory" class="badge badge-primary"></span>
+            </p>
+            <p class="text-sm text-gray-600 mb-4">
+              <span id="modalDescription"></span>
+            </p>
+            <div class="flex items-baseline gap-2 mb-6">
+              <span class="text-3xl font-bold text-green-600"
+                >$<span id="modalPrice">0</span></span
+              >
+            </div> -->
+
+          <p>
+            <span id="modal-status">status</span> &nbsp; Opened by:
+            <span id="modal-author">author</span> .
+            <span id="modal-date">date</span> &nbsp;
+          </p>
+          <p>
+            <span id="modal-bug" class="bg-yellow-400">bug</span> &nbsp;
+            <span id="modal-help-wanted" class="bg-yellow-400"
+              >help wanted</span
+            >
+          </p>
+          <p id="modal-des">description</p>
+          <p><span class="mr-70">Assignee</span> <span>Priority</span></p>
+          <p>
+            <span id="assignee" class="mr-70"></span>
+            <span id="priority" class="bg-violet-200"></span>
+          </p>
+        </div>
+
+        <div class="modal-action">
+          <form method="dialog">
+            <!-- if there is a button in form, it will close the modal -->
+            <button class="btn btn-primary">Close</button>
+          </form>
+        </div>
+      </div>
+    </dialog>
+
 
     <script src="script/home.js"></script>
 </body>
