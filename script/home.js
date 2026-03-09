@@ -68,7 +68,7 @@ function displayAllIssues(issues) {
   issues.forEach((issue) => {
     const issueCard = document.createElement("div");
 
-    issueCard.className = `${issue.status == "open" ? "card bg-white border-t border-green-500 p-5 shadow-md space-y-3 hover:cursor-pointer" : "card bg-white border-t border-purple-500 p-5 shadow-md space-y-3 hover:cursor-pointer"}`;
+    issueCard.className = `${issue.status == "open" ? "card bg-white border-t-3 border-green-500 p-5 shadow-md space-y-3 hover:cursor-pointer" : "card bg-white border-t-3 border-purple-500 p-5 shadow-md space-y-3 hover:cursor-pointer"}`;
     issueCard.innerHTML = `
   
           <!-- card top part  -->
@@ -130,7 +130,7 @@ function displayOpen(issues) {
   cardContainer.innerHTML = "";
   issues.forEach((issue) => {
     const issueCard = document.createElement("div");
-    issueCard.className = `${issue.status == "open" ? "card bg-white border-t border-green-500 p-5 shadow-md space-y-3 hover:cursor-pointer" : "card bg-white border-t border-purple-500 p-5 shadow-md space-y-3 hover:cursor-pointer"}`;
+    issueCard.className = `${issue.status == "open" ? "card bg-white border-t-3 border-green-500 p-5 shadow-md space-y-3 hover:cursor-pointer" : "card bg-white border-t-3 border-purple-500 p-5 shadow-md space-y-3 hover:cursor-pointer"}`;
     issueCard.innerHTML = `
   
           <!-- card top part  -->
@@ -169,7 +169,7 @@ function displayClosed(issues) {
   cardContainer.innerHTML = "";
   issues.forEach((issue) => {
     const issueCard = document.createElement("div");
-    issueCard.className = `${issue.status == "open" ? "card bg-white border-t border-green-500 p-5 shadow-md space-y-3 hover:cursor-pointer" : "card bg-white border-t border-purple-500 p-5 shadow-md space-y-3 hover:cursor-pointer"}`;
+    issueCard.className = `${issue.status == "open" ? "card bg-white border-t-3 border-green-500 p-5 shadow-md space-y-3 hover:cursor-pointer" : "card bg-white border-t-3 border-purple-500 p-5 shadow-md space-y-3 hover:cursor-pointer"}`;
     issueCard.innerHTML = `
   
           <!-- card top part  -->
@@ -262,7 +262,7 @@ function displaySearchInfo(issues) {
   cardContainer.innerHTML = "";
   issues.forEach((issue) => {
     const issueCard = document.createElement("div");
-    issueCard.className = `${issue.status == "open" ? "card bg-white border-t border-green-500 p-5 shadow-md space-y-3 hover:cursor-pointer" : "card bg-white border-t border-purple-500 p-5 shadow-md space-y-3 hover:cursor-pointer"}`;
+    issueCard.className = `${issue.status == "open" ? "card bg-white border-t-3 border-green-500 p-5 shadow-md space-y-3 hover:cursor-pointer" : "card bg-white border-t-3 border-purple-500 p-5 shadow-md space-y-3 hover:cursor-pointer"}`;
     issueCard.innerHTML = `
   
           <!-- card top part  -->
